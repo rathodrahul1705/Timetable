@@ -29,8 +29,15 @@
     for(i=0;i<{{$total_cols}};i++) {
       $("#time_table thead tr").append('<th>Day '+(i+1)+'</th>')
     }
+    cells = '';
     for(i=0;i<{{$total_rows}};i++) {
-      $("#time_table #table_body").append('<tr><td>'+(i+1)+'</td></tr>')
+      // $("#time_table #table_body").empty()
+
+          for(j=0;j<{{$total_cols}};j++) {
+            cells += '<td>'+(j+1)+'</td>'
+          }  
+          $("#time_table #table_body").append('<tr>'+cells+'</tr>')
+            console.log(cells)
     }
 
 
